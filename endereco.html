@@ -1,11 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Cadastro de Endereço</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        label span {
+            color: #e74c3c;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .opcional {
+            color: #999;
+            font-size: 12px;
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Cadastro de Endereço</h1>
+        <form id="formEndereco">
+            <div class="form-group">
+                <label for="cep">CEP <span>*</span></label>
+                <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9">
+            </div>
+
+            <div class="form-group">
+                <label for="logradouro">Logradouro <span>*</span></label>
+                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="numero">Número <span>*</span></label>
+                <input type="text" id="numero" name="numero" placeholder="123">
+            </div>
+
+            <div class="form-group">
+                <label for="uf">UF <span>*</span></label>
+                <input type="text" id="uf" name="uf" placeholder="SP" maxlength="2">
+            </div>
+
+            <div class="form-group">
+                <label for="complemento">Complemento <span class="opcional">(opcional)</span></label>
+                <input type="text" id="complemento" name="complemento" placeholder="Apto, Bloco, etc.">
+            </div>
+
+            <div class="button-container">
+                <button type="submit">Cadastrar Endereço</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
